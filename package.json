@@ -1,6 +1,6 @@
 {
   "name": "BitWeav",
-  "description": "",
+  "description": "Premier graphical BitWeav client",
   "version": "0.0.0",
   "keywords": ["bitweav", "decentralised", "p2p", "microblogging", "micropublishing", "gui", "client", "app"],
   "maintainers": [

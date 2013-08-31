@@ -1,5 +1,5 @@
 # BitWeav
-Premier graphical client for bitweavd. In-development v0.0.0. 
+Premier graphical BitWeav client. In-development v0.0.0. 
 
 ## Install
  1. Clone the git repo: `git clone https://github.com/bitweav/BitWeav`.
