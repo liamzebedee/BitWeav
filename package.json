@@ -1,0 +1,33 @@
+{
+  "name": "BitWeav",
+  "description": "",
+  "version": "0.0.0",
+  "keywords": ["bitweav", "decentralised", "p2p", "microblogging", "micropublishing", "gui", "client", "app"],
+  "maintainers": [
+  	{
+      "name": "Liam Edwards-Playne",
+      "web": "http://liamz.co"
+  	}
+  ],
+  "contributors": [
+  	{
+      "name": "Liam Edwards-Playne",
+      "web": "http://liamz.co"
+  	}
+  ],
+  "bugs": "http://github.com/bitweav/BitWeav/issues",
+  "licenses": [{ "type": "GPLv3", "url": "http://opensource.org/licenses/GPL-3.0" }],
+  "repositories": [
+    {
+      "type": "git", 
+      "url": "http://github.com/bitweav/BitWeav.git"
+    }
+  ],
+  "homepage": "http://bitweav.org",
+  
+  "main": "index.html",
+  "window": {
+  	"toolbar": false,
+  	"icon": "icon.png"
+  }
+}
