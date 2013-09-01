@@ -9,10 +9,11 @@
 var less = require('less');
 var fs = require( 'fs' );
 
-fs.readFile( 'css/main.less', function ( error, data ) {
+fs.unlink('css/.main.compiled.less', function(a,b){});
+fs.readFile('css/main.less', function ( error, data ) {
   less.render(data.toString(), function (e, css) {
-    if(e !== null) { console.log(e); }
-    fs.writeFile("./css/main.compiled.css", css, function(err) {
+    if(e !== null) { console.log("\nLESS error in css/main.less: \n\t"+e); }
+    fs.writeFile("./css/.main.compiled.css", css, function(err) {
       if(err) { console.log(err); }
     });
   });

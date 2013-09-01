@@ -1,5 +1,35 @@
 @import "css/bs3/bootstrap.less";
 
+@import "css/bs3/scaffolding.less";
+@link-color: #1ABC9C;
+@link-hover-color: darken(@link-color, 15%);
+
+
+
 body {
   .container;
+  padding-top: 50px; // for the navbar
 }
+
+#nav-main {
+  margin-bottom: 0px;
+}
+
+#main {
+  height: 100%;
+
+  .make-row;
+  @offset: 2;
+  @width: 8;
+  .make-md-column-offset(@offset);
+  .make-lg-column-offset(@offset);
+  .make-md-column(@width);
+  .make-lg-column(@width);
+
+  article {
+    margin-top: 1em;
+    border-radius: 5px;
+    border: 1px solid @gray;
+  }
+}
+

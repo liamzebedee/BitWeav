@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="BitWeav">
     <head>
         <meta charset="UTF-8" />
         <title>BitWeav</title>
-        <link rel="stylesheet" type="text/css" href="css/main.compiled.css"/>
+        <link rel="stylesheet" type="text/css" href="css/.main.compiled.css"/>
     </head>
 
     <body>
-        <nav class="navbar navbar-default" role="navigation">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/asdsad.html">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
+        <!-- NAVIGATION -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav-main" nav-menu>
+            <ul class="nav navbar-nav navbar-left">
+                <a class="navbar-brand" href="#">BitWeav</a>
+
+                <li class="active"><a href="#/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="#/read"><span class="glyphicon glyphicon-book"></span> Read</a></li>
+                <li><a href="#/discover"><span class="glyphicon glyphicon-tags"></span> Discover</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Write</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/me"><span class="glyphicon glyphicon-user"></span> Me</a></li>
+                <li><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
             </ul>
         </nav>
 
-        <div ng-controller="AppCtrl">
-            <input ng-model="name" type="text">
-            <p>Hello, {{name}}!</p>
-        </div>
 
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/angular-1.0.7.js"></script>
-        <script src="js/bootstrap-3.0.0.js"></script>
+        <!-- MAIN -->
+        <div id="main" ng-view></div>
+
+
+        <!-- FOOTER -->
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <p class="navbar-text"><span class="badge">ONLINE</span> — 6 nodes active</p>
+            <ul class="nav navbar-nav">
+            </ul>
+        </nav>
+
+
+        <!-- SCRIPTS -->
+        <script src="node_modules/jquery-1.10.2.min.js"></script>
+        <script src="node_modules/angular-1.0.7.js"></script>
+        <script src="node_modules/bootstrap-3.0.0.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
     </body>
 </html>
