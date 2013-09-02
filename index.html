@@ -10,32 +10,57 @@
     <body>
         <!-- NAVIGATION -->
         <nav class="row navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="nav-main" nav-menu>
-            <ul class="nav navbar-nav navbar-left">
-                <a class="navbar-brand" href="#">BitWeav</a>
+            <div class="wrap">
+                <ul class="nav navbar-nav navbar-left">
+                    <a class="navbar-brand" href="#">BitWeav</a>
 
-                <li class="active"><a href="#/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="#/read"><span class="glyphicon glyphicon-book"></span> Read</a></li>
-                <li><a href="#/discover"><span class="glyphicon glyphicon-tags"></span> Discover</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Write</a></li>
-            </ul>
+                    <li class="active"><a href="#/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="#/read"><span class="glyphicon glyphicon-book"></span> Read</a></li>
+                </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/profile"><span class="glyphicon glyphicon-user"></span> Me</a></li>
-                <li><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-            </ul>
+                <form class="navbar-form navbar-left">
+                    <button data-toggle="modal" href="#write-modal" id="write" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span> Write</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/profile"><span class="glyphicon glyphicon-user"></span> Me</a></li>
+                    <li><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                </ul>
+            </div>
         </nav>
 
 
         <!-- MAIN -->
         <div id="main" ng-view></div>
+        <div class="modal fade" id="write-modal" tabindex="-1" role="dialog" aria-labelledby="write" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Write a message</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-        <!-- FOOTER -->
-        <nav id="nav-stats" class="row navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <p class="navbar-text"><span class="badge">ONLINE</span> — 6 nodes active</p>
-            <ul class="nav navbar-nav">
-            </ul>
-        </nav>
+
+        <!-- FOOTER
+<nav id="nav-stats" class="row navbar navbar-default navbar-fixed-bottom" role="navigation">
+<div class="wrap">
+<p class="navbar-text"><span class="badge">ONLINE</span> — 6 nodes active</p>
+<ul class="nav navbar-nav">
+</ul>
+</div>
+</nav>-->
 
 
         <!-- SCRIPTS -->

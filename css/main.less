@@ -9,6 +9,7 @@ body {
   .container;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: white;
 }
 
 .jumbotron {
@@ -27,8 +28,11 @@ body {
 
 #nav-main,
 #nav-stats {
-  padding-left: (@jumbotron-padding/2);
-  padding-right: (@jumbotron-padding/2);
+  .make-row;
+  .wrap {
+    .off(1);
+    .col(10);
+  }
 }
 
 #main {
@@ -50,25 +54,13 @@ body {
 
 // Read.
 #main #read {
-  #reads {
+  #read-content {
     .col(9);
     #add-subscription {
       .col(8);
     }
   }
-  #subscriptions {
-    .col(3);
-  }
-}
-// Discover
-#main #discover {
-  #discover-main {
-    .col(9);
-    form {
-      .col(8);
-    }
-  }
-  #discover-menu {
+  #read-menu {
     .col(3);
   }
 }

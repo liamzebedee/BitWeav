@@ -6,10 +6,6 @@ function ReadCtrl($scope, $routeParams) {
 
 }
 
-function DiscoverCtrl($scope, $routeParams) {
-
-}
-
 function MeCtrl($scope, $routeParams) {
 
 }
