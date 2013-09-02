@@ -16,6 +16,14 @@ body {
   color: white;
   a { color: white; }
 }
+.off(@width) {
+  .make-md-column-offset(@width);
+  .make-lg-column-offset(@width);
+}
+.col(@width) {
+  .make-md-column(@width);
+  .make-lg-column(@width);
+}
 
 #nav-main,
 #nav-stats {
@@ -29,45 +37,51 @@ body {
     margin-left: 0px;
     margin-right: 0px;
     .wrap {
-      .make-md-column-offset(1);
-      .make-lg-column-offset(1);
-      .make-md-column(10);
-      .make-lg-column(10);
-      padding-left: 0px;
-      padding-right: 0px;
+      .off(1);
+      .col(10);
     }
   }
   article {
     .make-row;
-    .make-md-column-offset(1);
-    .make-lg-column-offset(1);
-    .make-md-column(10);
-    .make-lg-column(10);
+    .off(1);
+    .col(10);
   }
 }
 
-// Home.
-#main #home {
-  .messages {
-    .list-inline;
-  }
-}
 // Read.
 #main #read {
   #reads {
-    form {
-      .make-md-column(4);
-      .make-lg-column(4);
+    .col(9);
+    #add-subscription {
+      .col(8);
     }
   }
   #subscriptions {
+    .col(3);
   }
 }
-
-#main #settings {
-  .make-md-column(4);
-  .make-lg-column(4);
-  #basic-settings {
-
+// Discover
+#main #discover {
+  #discover-main {
+    .col(9);
+    form {
+      .col(8);
+    }
   }
+  #discover-menu {
+    .col(3);
+  }
+}
+// Profile.
+#main #profile {
+  #profile-content {
+    .col(9);
+  }
+  #profile-menu {
+    .col(3);
+  }
+}
+// Settings.
+#main #settings {
+  .col(8);
 }
