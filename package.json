@@ -28,11 +28,15 @@
 
   "main": "index.html#/home",
   "node-main": "js/setup.js",
+  "single-instance": true,
   "window": {
-  	"toolbar": false,
+  	"toolbar": true,
   	"icon": "icon.png",
     "minWidth": 1024,
     "minHeight": 768,
-    "show": false
+    "show": true
+  },
+  "webkit": {
+    "page-cache": false
   }
 }

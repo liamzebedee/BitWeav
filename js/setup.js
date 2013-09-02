@@ -7,7 +7,7 @@
 /// (we do this here so the user sees a nicely styled page on startup)
 ///
 var less = require('less');
-var fs = require( 'fs' );
+var fs = require('fs');
 
 fs.unlink('css/.main.compiled.less', function(a,b){});
 fs.readFile('css/main.less', function ( error, data ) {

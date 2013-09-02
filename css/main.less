@@ -1,35 +1,73 @@
 @import "css/bs3/bootstrap.less";
-
-@import "css/bs3/scaffolding.less";
+@import "css/bs3/variables.less";
 @link-color: #1ABC9C;
 @link-hover-color: darken(@link-color, 15%);
-
-
+@jumbotron-padding: 30px;
 
 body {
-  .container;
   padding-top: 50px; // for the navbar
+  .container;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-#nav-main {
-  margin-bottom: 0px;
+.jumbotron {
+  background: linear-gradient(45deg, #020031 0%, #6d3353 100%);
+  color: white;
+  a { color: white; }
+}
+
+#nav-main,
+#nav-stats {
+  padding-left: (@jumbotron-padding/2);
+  padding-right: (@jumbotron-padding/2);
 }
 
 #main {
-  height: 100%;
-
-  .make-row;
-  @offset: 2;
-  @width: 8;
-  .make-md-column-offset(@offset);
-  .make-lg-column-offset(@offset);
-  .make-md-column(@width);
-  .make-lg-column(@width);
-
+  header {
+    .make-row;
+    margin-left: 0px;
+    margin-right: 0px;
+    .wrap {
+      .make-md-column-offset(1);
+      .make-lg-column-offset(1);
+      .make-md-column(10);
+      .make-lg-column(10);
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
   article {
-    margin-top: 1em;
-    border-radius: 5px;
-    border: 1px solid @gray;
+    .make-row;
+    .make-md-column-offset(1);
+    .make-lg-column-offset(1);
+    .make-md-column(10);
+    .make-lg-column(10);
   }
 }
 
+// Home.
+#main #home {
+  .messages {
+    .list-inline;
+  }
+}
+// Read.
+#main #read {
+  #reads {
+    form {
+      .make-md-column(4);
+      .make-lg-column(4);
+    }
+  }
+  #subscriptions {
+  }
+}
+
+#main #settings {
+  .make-md-column(4);
+  .make-lg-column(4);
+  #basic-settings {
+
+  }
+}
