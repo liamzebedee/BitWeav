@@ -1,15 +1,38 @@
 <header class="jumbotron">
     <span class="wrap">
         <h3><a class="pull-right glyphicon glyphicon-question-sign" href=""></a></h3>
-        <h1>Welcome to <a href="#">BitWeav</a></h1>
-        <p class="lead">Open P2P microblogging.</p>
+        <h1>Read</h1>
+        <p class="lead">Read messages from your subscriptions to hashtags, users and threads.</p>
     </span>
 </header>
 
 <article id="home">
-    <ul id="messages">
+    <section id="home-content">
 
-    </ul>
+    </section>
 
-    <message author="dave" reply="" thread="" language="" starred=false watched=false>asdsadsad</message>
+    <section id="home-menu">
+        <div class="row">
+            <form id="publish" role="form">
+                <textarea class="form-control" spellcheck="true" rows=2 autosize
+                          data-provide="limit" data-counter="#counter" data-max-chars=200 placeholder="Compose a new message..."></textarea>
+                <div id="tools">
+                    <button type="button" class="pull-left btn btn-primary">Publish</button>
+                    <span class="pull-right text-muted">
+                        <span id="counter">200</span>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <div id="subscriptions" class="panel panel-primary row">
+            <header class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-bookmark"></span> Subscriptions</h3></header>
+            <div class="list-group">
+                <a href="#" class="list-group-item">#occupy</a>
+                <p class="list-group-item">asdoisakd asd sadas </p>
+            </div>
+        </div>
+    </section>
 </article>

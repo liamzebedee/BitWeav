@@ -4,10 +4,12 @@
  *  - <panel>
  */
 
+var gui = require('nw.gui');
+
 angular.module('BitWeav').
 // <message author="" reply="" thread="" language="" -starred=false -watched=false></message>
 directive('message', function() {
-  var directiveDefinitionObject = {
+  var definition = {
     restrict: 'E',
     replace: true,
     template: '<article>{{ author }}</article>',
@@ -15,7 +17,22 @@ directive('message', function() {
 
     }
   };
-  return directiveDefinitionObject;
+  return definition;
+}).
+
+directive('autosize', function(){
+  return function(scope, iElement, iAttrs) {
+    iElement.autosize();
+  };
+}).
+
+directive('openInBrowser', function() {
+  return function(scope, iElement, iAttrs) {
+    iElement.bind('click', function(){
+      gui.Shell.openExternal(iAttrs['href']);
+      return false; // don't open in usual browser
+    });
+  };
 });
 
 /*.
@@ -24,4 +41,6 @@ directive('panel', function(){
     restrict: 'E',
     template: ''
   };
-});*/
+}).
+directive('languageSelector')
+*/

@@ -1,8 +1,9 @@
 @import "css/bs3/bootstrap.less";
 @import "css/bs3/variables.less";
-@link-color: #1ABC9C;
-@link-hover-color: darken(@link-color, 15%);
-@jumbotron-padding: 30px;
+@import "css/bs3/mixins.less";
+//@link-color: #1ABC9C;
+//@link-hover-color: darken(@link-color, 15%);
+@jumbotron-padding: 15px;
 
 body {
   padding-top: 50px; // for the navbar
@@ -25,6 +26,9 @@ body {
   .make-md-column(@width);
   .make-lg-column(@width);
 }
+.nice-length-for-reading {
+  max-width: 35em;
+}
 
 #nav-main,
 #nav-stats {
@@ -41,39 +45,68 @@ body {
     margin-left: 0px;
     margin-right: 0px;
     .wrap {
-      .off(1);
-      .col(10);
+      .off(2);
+      .col(8);
     }
   }
   article {
     .make-row;
-    .off(1);
-    .col(10);
+    .off(2);
+    .col(8);
   }
 }
 
-// Read.
-#main #read {
-  #read-content {
-    .col(9);
-    #add-subscription {
-      .col(8);
+// Intro.
+#main #intro {
+  .col(12);
+}
+// Home.
+#main #home {
+  #home-content {
+    .col(8);
+
+  }
+  #home-menu {
+    .col(4);
+    #publish {
+      .nice-length-for-reading;
+      #tools {
+        #counter { margin-right: 5px; }
+        padding-top: 0.5em;
+      }
     }
   }
-  #read-menu {
-    .col(3);
+}
+// Discover.
+#main #discover {
+  #discover-content {
+    .col(8);
+    #add-subscription {
+    }
+  }
+  #discover-menu {
+    .col(4);
   }
 }
 // Profile.
 #main #profile {
   #profile-content {
-    .col(9);
+    .col(8);
   }
   #profile-menu {
-    .col(3);
+    .col(4);
   }
 }
 // Settings.
 #main #settings {
   .col(8);
+  .panel a {
+    .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
+  }
+}
+
+#write-modal {
+  .modal-body {
+    padding-bottom: 0.5em;
+  }
 }

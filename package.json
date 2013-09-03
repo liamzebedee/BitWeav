@@ -17,12 +17,10 @@
   ],
   "bugs": "http://github.com/bitweav/BitWeav/issues",
   "licenses": [{ "type": "GPLv3", "url": "http://opensource.org/licenses/GPL-3.0" }],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "http://github.com/bitweav/BitWeav.git"
-    }
-  ],
+  "repository": {
+     "type": "git",
+     "url": "http://github.com/bitweav/BitWeav.git"
+  },
   "homepage": "http://bitweav.org",
 
 
