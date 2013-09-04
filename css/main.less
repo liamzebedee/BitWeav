@@ -40,7 +40,7 @@ body {
 }
 
 #main {
-  header {
+  & > header {
     .make-row;
     margin-left: 0px;
     margin-right: 0px;
@@ -49,7 +49,7 @@ body {
       .col(8);
     }
   }
-  article {
+  & > article {
     .make-row;
     .off(2);
     .col(8);
@@ -58,7 +58,10 @@ body {
 
 // Intro.
 #main #intro {
-  .col(12);
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
+	font-size: 16px;
+	line-height: 24px;
+  max-width: 35em;
 }
 // Home.
 #main #home {
