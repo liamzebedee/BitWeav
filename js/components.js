@@ -13,13 +13,24 @@ directive('message', function() {
       thread: '@',
       language: '@',
       starred: '@',
-      watched: '@'
+      watched: '@',
+      timestamp: '@'
     },
     template:
     '<div class="message">' +
-    '<header></header>' +
-    '<article ng-transclude></article>' +
-    '<footer></footer>' +
+      '<a class="pull-left user-dp" href="#">' +
+        '<img class="media-object" src="https://sigil.cupcake.io/dave">' +
+      '</a>' +
+      '<article class="media-body">' +
+        '<header>' +
+          '<a href="#"><h4 class="media-heading">{{ author }} <small>{{ author-id }}</small></h4></a>' +
+          '<time class="pull-right">{{ timestamp }}</time>' +
+        '</header>' +
+        '<p ng-transclude></p>' +
+        '<footer><div class="controls">' +
+          'Reply Watch Star' +
+        '</div></footer>' +
+      '</article>' +
     '</div>',
     replace: true
   };
