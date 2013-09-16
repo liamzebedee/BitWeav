@@ -19,7 +19,7 @@ directive('message', function() {
     template:
     '<div class="message">' +
       '<a class="pull-left user-dp" href="#">' +
-        '<img class="media-object" src="https://sigil.cupcake.io/dave">' +
+        '<img src="https://sigil.cupcake.io/dave">' +
       '</a>' +
       '<article class="media-body">' +
         '<header>' +

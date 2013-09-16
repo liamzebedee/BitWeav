@@ -1,34 +1,9 @@
 @import "css/bs3/bootstrap.less";
 @import "css/bs3/variables.less";
 @import "css/bs3/mixins.less";
-//@link-color: #1ABC9C;
-//@link-hover-color: darken(@link-color, 15%);
-@jumbotron-padding: 15px;
 
-body {
-  padding-top: 50px; // for the navbar
-  .container;
-  padding-left: 0px;
-  padding-right: 0px;
-  background-color: white;
-}
-
-.jumbotron {
-  background: linear-gradient(45deg, #020031 0%, #6d3353 100%);
-  color: white;
-  a { color: white; }
-}
-.off(@width) {
-  .make-md-column-offset(@width);
-  .make-lg-column-offset(@width);
-}
-.col(@width) {
-  .make-md-column(@width);
-  .make-lg-column(@width);
-}
-.nice-length-for-reading {
-  max-width: 35em;
-}
+@import "css/util.less";
+@import "css/common.less";
 
 #nav-main,
 #nav-stats {
@@ -42,8 +17,6 @@ body {
 #main {
   & > header {
     .make-row;
-    margin-left: 0px;
-    margin-right: 0px;
     .wrap {
       .off(2);
       .col(8);
@@ -63,24 +36,42 @@ body {
 	line-height: 24px;
   max-width: 35em;
 }
-// Home.
+
+
+
+// Home
 #main #home {
   #home-content {
     .col(8);
 
+    #feed {
+      .make-row;
+      h1 { margin-top: 0px; }
+      ul { .col(12); }
+    }
   }
+
   #home-menu {
     .col(4);
+
     #publish {
+      .make-row;
       .nice-length-for-reading;
       #tools {
         #counter { margin-right: 5px; }
         padding-top: 0.5em;
       }
     }
+
+    #subscriptions {
+      .make-row;
+    }
   }
 }
-// Discover.
+
+
+
+// Discover
 #main #discover {
   #discover-content {
     .col(8);
@@ -91,6 +82,9 @@ body {
     .col(4);
   }
 }
+
+
+
 // Profile.
 #main #profile {
   #profile-content {
@@ -100,6 +94,9 @@ body {
     .col(4);
   }
 }
+
+
+
 // Settings.
 #main #settings {
   .col(8);
@@ -107,11 +104,3 @@ body {
     .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
   }
 }
-
-#write-modal {
-  .modal-body {
-    padding-bottom: 0.5em;
-  }
-}
-
-@import "css/common.less";

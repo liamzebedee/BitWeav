@@ -7,31 +7,31 @@
 
 <article id="home">
     <section id="home-content">
-        <div class="row">
-        <h1>Feed</h1>
-        <ul id="feed">
-            <li><message author="Dave" author-id="4ABF12ad3rA" reply="" thread="" language="en" timestamp="14h" starred=false watched=false>Check out this #awesome message</message></li>
-        </ul>
+        <div id="feed">
+            <h1>Feed</h1>
+            <ul id="feed">
+                <li><message author="Dave" author-id="4ABF12ad3rA" reply="" thread="" language="en" timestamp="14h" starred=false watched=false>
+                    Check out this #awesome message
+                    </message></li>
+            </ul>
         </div>
     </section>
 
     <section id="home-menu">
-        <div class="row">
-            <form id="publish" role="form">
-                <textarea class="form-control" spellcheck="true" rows=2 autosize
-                          data-provide="limit" data-counter="#counter" data-max-chars=200 placeholder="Compose a new message..."></textarea>
-                <div id="tools">
-                    <button type="button" class="pull-left btn btn-primary">Publish</button>
-                    <span class="pull-right text-muted">
-                        <span id="counter">200</span>
-                    </span>
-                </div>
-            </form>
-        </div>
+        <form id="publish" role="form">
+            <textarea class="form-control" spellcheck="true" rows=2 autosize
+                      data-provide="limit" data-counter="#counter" data-max-chars=200 placeholder="Compose a new message..."></textarea>
+            <div id="tools">
+                <button type="button" class="pull-left btn btn-primary">Publish</button>
+                <span class="pull-right text-muted">
+                    <span id="counter">200</span>
+                </span>
+            </div>
+        </form>
 
         <hr>
 
-        <div id="subscriptions" class="panel panel-primary row">
+        <div id="subscriptions" class="panel panel-primary">
             <header class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-bookmark"></span> Subscriptions</h3></header>
             <div class="list-group">
                 <a href="#" class="list-group-item">#occupy</a>

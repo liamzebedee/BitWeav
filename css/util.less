@@ -1,0 +1,30 @@
+@import "css/bs3/bootstrap.less";
+@import "css/bs3/variables.less";
+@import "css/bs3/mixins.less";
+
+@jumbotron-padding: 15px;
+
+body {
+  padding-top: 50px; // for the navbar
+  .container;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: white;
+}
+
+.jumbotron {
+  background: linear-gradient(45deg, #020031 0%, #6d3353 100%);
+  color: white;
+  a { color: white; }
+}
+.off(@width) {
+  .make-md-column-offset(@width);
+  .make-lg-column-offset(@width);
+}
+.col(@width) {
+  .make-md-column(@width);
+  .make-lg-column(@width);
+}
+.nice-length-for-reading {
+  max-width: 35em;
+}
