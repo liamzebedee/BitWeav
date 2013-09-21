@@ -43,12 +43,6 @@
 #main #home {
   #home-content {
     .col(8);
-
-    #feed {
-      .make-row;
-      h1 { margin-top: 0px; }
-      ul { .col(12); }
-    }
   }
 
   #home-menu {
@@ -76,10 +70,16 @@
   #discover-content {
     .col(8);
     #add-subscription {
+      .make-row;
+      .col(12);
     }
   }
   #discover-menu {
     .col(4);
+    #discover-1 {
+      .make-row;
+      .col(12);
+    }
   }
 }
 
@@ -88,9 +88,11 @@
 // Profile.
 #main #profile {
   #profile-content {
+    .make-row;
     .col(8);
   }
   #profile-menu {
+    .make-row;
     .col(4);
   }
 }

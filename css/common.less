@@ -1,19 +1,37 @@
 @import "css/bs3/variables.less";
 
 .message {
+  .media;
+
   .user-dp {
     img {
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
       .media-object;
+      border-radius: 5px 5px 5px 5px;
     }
   }
-  .media;
   .media-body {
-    header {}
-    footer .controls { display: none; }
+    header {
+      h4 {
+        a {
+          color: black;
+          font-weight: bold;
+        }
+
+      }
+    }
+    footer .controls {
+      .list-inline;
+    }
   }
-  border-bottom: 1px solid black;
+}
+
+.feed {
+  .make-row;
+  .col(12);
+  padding-left: 0px;
+  h1 { margin-top: 0px; }
 }
 
 #write-modal {

@@ -2,6 +2,20 @@ var gui = require('nw.gui');
 
 angular.module('BitWeav').
 
+// Helper to make code look nicer when producing glyphicons
+// <icon share></icon>
+directive('icon', function(){
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<span class="glyphicon"></span>',
+    compile: function(element, attrs) {
+      var iconName = element[0].attributes[1].name;
+      element.addClass("glyphicon-" + iconName);
+    }
+  }
+}).
+
 // <message author="" author-id="" reply="" thread="" language="" timestamp=x starred=false watched=false>Message content here with #hashtags.</message>
 directive('message', function() {
   return {
@@ -23,13 +37,14 @@ directive('message', function() {
       '</a>' +
       '<article class="media-body">' +
         '<header>' +
-          '<a href="#"><h4 class="media-heading">{{ author }} <small>{{ author-id }}</small></h4></a>' +
-          '<time class="pull-right">{{ timestamp }}</time>' +
+          '<h4 class="media-heading"><a href="#">{{ author }}</a> <small><span>{{ author-id }}</span> <time class="pull-right">{{ timestamp }}</time></small></h4>' +
         '</header>' +
         '<p ng-transclude></p>' +
-        '<footer><div class="controls">' +
-          'Reply Watch Star' +
-        '</div></footer>' +
+        '<footer style="display:none" show-on-hover-parent><ul class="controls">' +
+          '<li><icon share-alt></icon> Reply</li>' +
+          '<li><icon star-empty></icon> Favourite</li>' +
+          '<li><icon share></icon> Share</li>' +
+        '</ul></footer>' +
       '</article>' +
     '</div>',
     replace: true
@@ -51,4 +66,20 @@ directive('openInBrowser', function() {
       return false; // don't open in BitWeav interface
     });
   };
+}).
+
+// <footer style="display:none" show-on-hover-parent>extra controls</footer>
+directive('showOnHoverParent', function() {
+  return {
+    // XXX later we should put an init method here that automatically hides the element
+    link: function(scope, element, attrs) {
+      element.parent().bind('mouseenter', function() {
+        element.show();
+      });
+      element.parent().bind('mouseleave', function() {
+        element.hide();
+      });
+    }
+  };
 });
+
