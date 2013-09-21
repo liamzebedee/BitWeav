@@ -26,17 +26,16 @@
   & > article {
     .off(2);
     .col(8);
-
-    .wrap {
-      .row;
-    }
+    .wrap { .row; }
   }
 }
 
 
+.single-column-wrapper { .wrap { margin-left: 0px; } }
 
 // Intro.
 #main #intro {
+  .single-column-wrapper;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
 	font-size: 16px;
 	line-height: 24px;
@@ -77,7 +76,6 @@
     .col(8);
 
     #add-subscription {
-      .row;
     }
   }
   #discover-menu {
@@ -95,6 +93,7 @@
   }
   #profile-menu {
     .col(4);
+    .list-class { .row; }
   }
 }
 
@@ -102,6 +101,7 @@
 
 // Settings.
 #main #settings {
+  .single-column-wrapper;
   .panel a {
     .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
   }
