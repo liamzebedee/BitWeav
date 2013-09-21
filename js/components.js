@@ -81,5 +81,13 @@ directive('showOnHoverParent', function() {
       });
     }
   };
-});
+}).
 
+// Appends a random string to a CSS stylesheet <link>, to make it non-cacheable
+directive('nonCachedCss', function(){
+  return {
+    compile: function(element, attrs) {
+      element.attr('href', element.attr('data-href') + '?version=' + Math.random());
+    }
+  };
+});

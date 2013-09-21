@@ -16,18 +16,24 @@
 
 #main {
   & > header {
-    .make-row;
+    .row;
+    margin-right: 0px; // Without this, a horizontal scrollbar appears (ew). I'll figure out why, later...
     .wrap {
       .off(2);
       .col(8);
     }
   }
   & > article {
-    .make-row;
     .off(2);
     .col(8);
+
+    .wrap {
+      .row;
+    }
   }
 }
+
+
 
 // Intro.
 #main #intro {
@@ -49,16 +55,16 @@
     .col(4);
 
     #publish {
-      .make-row;
+      .row;
       .nice-length-for-reading;
       #tools {
-        #counter { margin-right: 5px; }
+        #counter { padding-right: 5px; }
         padding-top: 0.5em;
       }
     }
 
     #subscriptions {
-      .make-row;
+      .row;
     }
   }
 }
@@ -69,17 +75,14 @@
 #main #discover {
   #discover-content {
     .col(8);
+
     #add-subscription {
-      .make-row;
-      .col(12);
+      .row;
     }
   }
   #discover-menu {
     .col(4);
-    #discover-1 {
-      .make-row;
-      .col(12);
-    }
+    .list-class { .row; }
   }
 }
 
@@ -88,11 +91,9 @@
 // Profile.
 #main #profile {
   #profile-content {
-    .make-row;
     .col(8);
   }
   #profile-menu {
-    .make-row;
     .col(4);
   }
 }
@@ -101,7 +102,6 @@
 
 // Settings.
 #main #settings {
-  .col(8);
   .panel a {
     .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
   }
