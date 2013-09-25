@@ -2,6 +2,48 @@ var gui = require('nw.gui');
 
 angular.module('BitWeav').
 
+// <message author="" author-id="" reply="" thread="" language="" timestamp=x starred=false watched=false>Message content here with #hashtags.</message>
+directive('message', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    scope: {
+      author: '@',
+      authorId: '@',
+      reply: '@',
+      thread: '@',
+      timestamp: '@',
+      language: '@',
+      starred: '@',
+      watched: '@'
+    },
+    controller: function($scope, $element, $attrs, $transclude) {
+      $scope.hover = function() {
+
+      };
+      $scope.showReplyForm = function(){};
+    },
+    template:
+    '<div class="message" ng-mouseover="hover()" ng-click="showReplyForm()">' +
+      '<a class="pull-left user-dp" href="#">' +
+    '<img src="https://sigil.cupcake.io/{{ author }}">' +
+      '</a>' +
+      '<article class="media-body"">' +
+        '<header>' +
+          '<h4 class="media-heading"><a href="#">{{ author }}</a> <small><span>{{ author-id }}</span> <time class="pull-right">{{ timestamp }}</time></small></h4>' +
+        '</header>' +
+        '<p ng-transclude></p>' +
+        '<footer style="display:none" show-on-hover-parent><ul class="controls">' +
+          '<li ng-click="showReplyForm()"><icon share-alt></icon> Reply</li>' +
+          '<li><icon star-empty></icon> Favourite</li>' +
+          '<li><icon share></icon> Share</li>' +
+        '</ul></footer>' +
+      '</article>' +
+    '</div>',
+    replace: true,
+  };
+}).
+
 // Helper to make code look nicer when producing glyphicons
 // <icon share></icon>
 directive('icon', function(){
@@ -14,41 +56,6 @@ directive('icon', function(){
       element.addClass("glyphicon-" + iconName);
     }
   }
-}).
-
-// <message author="" author-id="" reply="" thread="" language="" timestamp=x starred=false watched=false>Message content here with #hashtags.</message>
-directive('message', function() {
-  return {
-    restrict: 'E',
-    transclude: true,
-    scope: {
-      author: '@',
-      reply: '@',
-      thread: '@',
-      language: '@',
-      starred: '@',
-      watched: '@',
-      timestamp: '@'
-    },
-    template:
-    '<div class="message">' +
-      '<a class="pull-left user-dp" href="#">' +
-        '<img src="https://sigil.cupcake.io/dave">' +
-      '</a>' +
-      '<article class="media-body">' +
-        '<header>' +
-          '<h4 class="media-heading"><a href="#">{{ author }}</a> <small><span>{{ author-id }}</span> <time class="pull-right">{{ timestamp }}</time></small></h4>' +
-        '</header>' +
-        '<p ng-transclude></p>' +
-        '<footer style="display:none" show-on-hover-parent><ul class="controls">' +
-          '<li><icon share-alt></icon> Reply</li>' +
-          '<li><icon star-empty></icon> Favourite</li>' +
-          '<li><icon share></icon> Share</li>' +
-        '</ul></footer>' +
-      '</article>' +
-    '</div>',
-    replace: true
-  };
 }).
 
 // <textarea autosize></textarea>
@@ -79,15 +86,6 @@ directive('showOnHoverParent', function() {
       element.parent().bind('mouseleave', function() {
         element.hide();
       });
-    }
-  };
-}).
-
-// Appends a random string to a CSS stylesheet <link>, to make it non-cacheable
-directive('nonCachedCss', function(){
-  return {
-    compile: function(element, attrs) {
-      element.attr('href', element.attr('data-href') + '?version=' + Math.random());
     }
   };
 });

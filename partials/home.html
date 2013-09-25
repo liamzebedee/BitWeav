@@ -7,11 +7,12 @@
 
 <article id="home"><div class="wrap">
     <section id="home-content">
-        <div class="feed">
+        <div class="feed" ng-controller="FeedCtrl">
             <h1>Feed</h1>
-            <ul>
-                <li><message author="Dave" author-id="4ABF12ad3rA" reply="" thread="" language="en" timestamp="14h" starred=false watched=false>
-                    Check out this #awesome message
+            <ul ng-repeat="message in messages">
+                <li>
+                    <message author="{{ message.author }}" author-id="{{ message.authorId }}" reply="{{ message.reply }}" thread="{{ message.thread }}" language="{{ message.language }}" timestamp="{{ message.timestamp }}" starred="{{ message.starred }}" watched="{{ message.watched }}">
+                    {{ message.content }}
                     </message>
                 </li>
             </ul>
