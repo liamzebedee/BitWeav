@@ -42,7 +42,7 @@ window.onload = function() {
 
 // Initialise AngularJS
 // --------------------
-angular.module('BitWeav', []).
+angular.module('BitWeav', ['infinite-scroll']).
 // Configuration.
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.

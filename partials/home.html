@@ -9,7 +9,7 @@
     <section id="home-content">
         <div class="feed" ng-controller="FeedCtrl">
             <h1>Feed</h1>
-            <ul ng-repeat="message in messages">
+            <ul ng-repeat="message in messages" infinite-scroll="scroll()" infinite-scroll-distance="3">
                 <li>
                     <message author="{{ message.author }}" author-id="{{ message.authorId }}" reply="{{ message.reply }}" thread="{{ message.thread }}" language="{{ message.language }}" timestamp="{{ message.timestamp }}" starred="{{ message.starred }}" watched="{{ message.watched }}">
                     {{ message.content }}
@@ -37,7 +37,7 @@
             <header class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-bookmark"></span> Subscriptions</h3></header>
             <div class="list-group">
                 <a href="#" class="list-group-item">#occupy</a>
-                <p class="list-group-item">asdoisakd asd sadas </p>
+                <p class="list-group-item">sub2</p>
             </div>
         </div>
     </section>

@@ -1,0 +1,20 @@
+<div class="message" ng-mouseover="hover()" ng-click="showReplyForm()">
+    <a class="pull-left user-dp" href="#">
+        <img src="https://sigil.cupcake.io/{{ author }}">
+    </a>
+    <article class="media-body">
+        <header>
+            <h4 class="media-heading">
+                <a href="#">{{ author }}</a> <small><span>{{ author-id }}</span>
+                <time class="pull-right">{{ timestamp }}</time></small>
+            </h4>
+        </header>
+        <p ng-transclude></p>
+        <footer><ul class="controls">
+            <li ng-click="showReplyForm()"><icon share-alt></icon> Reply</li>
+            <li><icon star-empty></icon> Favourite</li>
+            <li><icon share></icon> Share</li>
+            </ul>
+        </footer>
+    </article>
+</div>

@@ -25,4 +25,5 @@ controller('FeedCtrl', ['$scope', function($scope) {
       timestamp: 1237847338,
     }
   ];
+  $scope.scroll = function(){};
 }]);
