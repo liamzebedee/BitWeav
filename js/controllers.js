@@ -12,6 +12,7 @@ controller('FeedCtrl', ['$scope', function($scope) {
       starred: false,
       watched: false,
       timestamp: 1237847338,
+      messageId: 12321
     },
     {
       content: 'Woot Woot',
@@ -23,6 +24,7 @@ controller('FeedCtrl', ['$scope', function($scope) {
       starred: false,
       watched: false,
       timestamp: 1237847338,
+      messageId: 32141
     }
   ];
   $scope.scroll = function(){};

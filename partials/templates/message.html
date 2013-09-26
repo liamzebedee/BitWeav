@@ -1,4 +1,4 @@
-<div class="message" ng-mouseover="hover()" ng-click="expand($event)" ng-class="{ expanded: expanded }">
+<div class="message" id="message-{{ message_id }}" ng-mouseover="hover()" ng-click="expand($event)" ng-class="{ expanded: expanded }">
     <section class="message-main">
         <a class="pull-left user-dp" ng-click="">
             <img src="https://sigil.cupcake.io/{{ author }}">
@@ -22,12 +22,11 @@
 
     <section class="message-expanded" ng-init="expanded = false" ng-show="expanded">
         <form class="reply-form">
-            <textarea ng-focus="currentlyInReply = true" ng-blur="currentlyInReply = false" no-ng-click class="form-control" spellcheck="true" rows=2 autosize
-                      data-provide="limit" data-counter="#counter" data-max-chars=200 placeholder="Compose a new message..."></textarea>
-            <div id="tools" ng-show="currentlyInReply">
+            <textarea ng-focus="currentlyInReply = true" ng-blur="currentlyInReply = false" no-ng-click class="form-control" spellcheck="true" rows=2 autosize data-provide="limit" data-counter="#message-{{ messageId }} .tools .counter" data-max-chars=200 placeholder="Compose a new message..."></textarea>
+            <div class="tools" ng-show="currentlyInReply">
                 <button type="button" class="pull-left btn btn-primary">Publish</button>
                 <span class="pull-right text-muted">
-                    <span id="counter">200</span>
+                    <span class="counter">200</span>
                 </span>
             </div>
         </form>

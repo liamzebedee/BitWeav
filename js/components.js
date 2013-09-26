@@ -14,7 +14,8 @@ directive('message', function() {
       timestamp: '@',
       language: '@',
       starred: '@',
-      watched: '@'
+      watched: '@',
+      messageId: '@'
     },
     controller: function($scope, $element, $attrs, $transclude) {
       $scope.hover = function(){};
