@@ -1,5 +1,6 @@
 # BitWeav
 [![Stories in Ready](https://badge.waffle.io/bitweav/BitWeav.png)](http://waffle.io/bitweav/BitWeav)
+
 Premier graphical BitWeav client. In-development v0.0.0, not suitable for public usage.
 
 ## Install
