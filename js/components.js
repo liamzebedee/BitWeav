@@ -18,7 +18,10 @@ directive('message', function() {
     },
     controller: function($scope, $element, $attrs, $transclude) {
       $scope.hover = function(){};
-      $scope.isReplyFormOpen = false;
+      $scope.expand = function($event){
+        $scope.expanded = !$scope.expanded;
+        $event.stopPropagation();
+      };
     },
     templateUrl: 'partials/templates/message.html',
     replace: true,

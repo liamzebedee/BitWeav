@@ -4,8 +4,12 @@
   .media;
   padding: 9px 12px;
 
-  &:hover {
+  &:not(.expanded):hover {
     background-color: lighten(#000, 95%);
+    cursor: pointer;
+  }
+  &.expanded {
+    cursor: pointer;
   }
 
   .user-dp {

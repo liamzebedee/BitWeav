@@ -74,4 +74,15 @@ directive('showOnHoverParent', function() {
       });
     }
   };
+}).
+
+// For use in the <message>
+directive('noNgClick', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element.on('click', function($event){
+        $event.stopPropagation();
+      });
+    }
+  };
 });
