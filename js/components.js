@@ -18,7 +18,7 @@ directive('message', function() {
     },
     controller: function($scope, $element, $attrs, $transclude) {
       $scope.hover = function(){};
-      $scope.showReplyForm = function(){};
+      $scope.isReplyFormOpen = false;
     },
     templateUrl: 'partials/templates/message.html',
     replace: true,

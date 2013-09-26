@@ -1,4 +1,4 @@
-<div class="message" ng-mouseover="hover()" ng-click="showReplyForm()">
+<div class="message" ng-mouseover="hover()" ng-click="isReplyFormOpen = !isReplyFormOpen">
     <a class="pull-left user-dp" href="#">
         <img src="https://sigil.cupcake.io/{{ author }}">
     </a>
@@ -11,10 +11,13 @@
         </header>
         <p ng-transclude></p>
         <footer><ul class="controls">
-            <li ng-click="showReplyForm()"><icon share-alt></icon> Reply</li>
+            <li ng-click="isReplyFormOpen = !isReplyFormOpen"><icon share-alt></icon> Reply</li>
             <li><icon star-empty></icon> Favourite</li>
             <li><icon share></icon> Share</li>
             </ul>
         </footer>
+        <div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
+            <p>Reply here</p>
+        </div>
     </article>
 </div>
