@@ -1,6 +1,7 @@
-<div class="message" id="message-{{ message_id }}" ng-click="expand($event)" ng-class="{ expanded: expanded }">
+<div class="message" id="message-{{ message_id }}" ng-click="expand($event)" ng-class="{ expanded: expanded }" ng-mouseover="showControls = true" ng-mouseleave="showControls = false">
     <section class="message-main">
         <a class="pull-left user-dp" ng-click="profileCard($event)">
+            <!-- TODO replace with JS service -->
             <img src="https://sigil.cupcake.io/{{ author }}">
         </a>
         <article class="media-body">
@@ -12,9 +13,9 @@
             </header>
             <p ng-transclude></p>
             <footer><ul class="controls">
-                <li><a ng-click="composeReply($event)"><icon share-alt></icon> Reply</a></li>
-                <li><a ng-click="favourite($event)"><icon star-empty></icon> Favourite</a></li>
-                <li><a ng-click="share($event)"><icon share></icon> Share</a></li>
+                <li><a ng-click="composeReply($event)" ng-show="showControls"><icon share-alt></icon> Reply</a></li>
+                <li><a ng-click="favourite($event)" ng-show="showControls"><icon star-empty></icon> Favourite</a></li>
+                <li><a ng-click="share($event)" ng-show="showControls"><icon share></icon> Share</a></li>
                 </ul>
             </footer>
         </article>

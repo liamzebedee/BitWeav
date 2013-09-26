@@ -18,6 +18,8 @@ directive('message', function() {
       messageId: '@'
     },
     controller: function($scope, $element, $attrs, $transclude) {
+      $scope.showControls = false;
+
       $scope.expand = function($event){
         $scope.expanded = !$scope.expanded;
         $event.stopPropagation();
