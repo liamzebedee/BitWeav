@@ -11,8 +11,8 @@
             <h1>Feed</h1>
             <ul ng-repeat="message in messages" infinite-scroll="scroll()" infinite-scroll-distance="3">
                 <li>
-                    <message author="{{ message.author }}" author-id="{{ message.authorId }}" reply="{{ message.reply }}" thread="{{ message.thread }}" language="{{ message.language }}" timestamp="{{ message.timestamp }}" starred="{{ message.starred }}" watched="{{ message.watched }}">
-                    {{ message.content }}
+                    <message content="{{ message.content }}" author="{{ message.author }}" author-id="{{ message.authorId }}" reply="{{ message.reply }}" thread="{{ message.thread }}" language="{{ message.language }}" timestamp="{{ message.timestamp }}" starred="{{ message.starred }}" watched="{{ message.watched }}">
+
                     </message>
                 </li>
             </ul>

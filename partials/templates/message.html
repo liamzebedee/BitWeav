@@ -11,7 +11,7 @@
                     <time class="pull-right">{{ timestamp }}</time></small>
                 </h4>
             </header>
-            <p ng-transclude></p>
+            <p ng-bind-html="content | autolink" no-ng-click></p>
             <footer><ul class="controls">
                 <li><a ng-click="composeReply($event)" ng-show="showControls"><icon share-alt></icon> Reply</a></li>
                 <li><a ng-click="favourite($event)" ng-show="showControls"><icon star-empty></icon> Favourite</a></li>
@@ -25,14 +25,14 @@
         <form novalidate class="reply-form simple-form media">
             <img src="https://sigil.cupcake.io/you" class="pull-left" width=32 height=32>
             <div class="media-body">
-            <textarea ng-focus="currentlyInReply = true" ng-blur="currentlyInReply = false" no-ng-click ng-model="replyContent" class="form-control" spellcheck="true" rows=3 autosize data-provide="limit" data-counter="#message-{{ messageId }} .tools .counter" data-max-chars=200 placeholder="Reply to {{ author }}" required></textarea>
-            <div class="tools" ng-show="currentlyInReply">
-                <button ng-click="sendReply(replyContent)" type="button" class="pull-left btn btn-primary">Publish</button>
-                <span class="pull-right text-muted">
-                    <span class="counter">200</span>
-                </span>
+                <textarea ng-focus="currentlyInReply = true" ng-blur="currentlyInReply = false" no-ng-click ng-model="replyContent" class="form-control" spellcheck="true" rows=3 autosize data-provide="limit" data-counter="#message-{{ messageId }} .tools .counter" data-max-chars=200 placeholder="Reply to {{ author }}" required></textarea>
+                <div class="tools" ng-show="currentlyInReply">
+                    <button ng-click="sendReply(replyContent)" type="button" class="pull-left btn btn-primary">Publish</button>
+                    <span class="pull-right text-muted">
+                        <span class="counter">200</span>
+                    </span>
+                </div>
             </div>
-        </div>
         </form>
 
         <div class="message-replies">

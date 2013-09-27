@@ -5,8 +5,9 @@ angular.module('BitWeav').
 directive('message', function() {
   return {
     restrict: 'E',
-    transclude: true,
+    transclude: false,
     scope: {
+      content: '@',
       author: '@',
       authorId: '@',
       reply: '@',
@@ -17,7 +18,7 @@ directive('message', function() {
       watched: '@',
       messageId: '@'
     },
-    controller: function($scope, $element, $attrs, $transclude) {
+    controller: function($scope, $element, $attrs) {
       $scope.showControls = false;
 
       $scope.expand = function($event){

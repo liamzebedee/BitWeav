@@ -3,7 +3,7 @@ angular.module('BitWeav').
 controller('FeedCtrl', ['$scope', function($scope) {
   $scope.messages = [
     {
-      content: 'Check out this #awesome message',
+      content: 'Check out this #awesome message http://google.com',
       author: 'Dave',
       authorId: 2141221124,
       reply: 1242143,
